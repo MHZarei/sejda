@@ -32,6 +32,7 @@ public enum Repagination implements FriendlyNamed {
      * Applying the last-first repagination in this case would order the pages as a reader would expect them: 1,2,3,4,5,6,7,8,9,10
      */
     LAST_FIRST("last-first"),
+    RTL("rtl"),
     NONE("none");
 
     private String displayName;

@@ -152,6 +152,15 @@ public class SplitDownTheMiddleTask extends BaseTask<SplitDownTheMiddleParameter
                         step = 1;
                     }
                 }
+            }else if(parameters.getRepagination() == Repagination.RTL) {
+                int pages = destinationHandler.getNumberOfPages();
+
+                for(int i=2 ; i<= pages ; i+=2){                	
+                    destinationHandler.movePageToDocumentEnd(2);
+                    destinationHandler.movePageToDocumentEnd(1);
+                }
+                if(pages % 2 == 1)
+                	destinationHandler.movePageToDocumentEnd(1);
             }
 
             destinationHandler.savePDDocument(tmpFile);
